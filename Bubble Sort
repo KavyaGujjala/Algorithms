@@ -9,6 +9,7 @@ def bubble_sort(arr):
                 
         if swapped==False:
             break
-arr = [4,3,2,1]
-sorted_arr = bubble_sort(arr)
+    return arr
+arr1 = [4,3,2,1]
+sorted_arr = bubble_sort(arr1)
 print(sorted_arr)
