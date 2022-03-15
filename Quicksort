@@ -1,0 +1,29 @@
+def partition(start, end, array):
+    piv_idx = start
+    pivot = array[piv_idx]
+    
+    while start<end:
+        while start<len(array) and array[start]<=pivot:
+            start += 1
+            
+        while array[end]>pivot:
+            end -= 1
+            
+        if start<end:
+            array[start], array[end] = array[end], array[start]
+            
+    array[end], array[piv_idx] = array[piv_idx], array[end]
+    
+    return end
+
+def quicksort(start, end, array):
+    
+    if start<end:
+        p = partition(start, end, array)
+        quicksort(start, p-1, array)
+        quicksort(p+1, end, array)
+        
+array = [ 10, 7, 8, 9, 1, 5 ]
+quicksort(0, len(array) - 1, array)
+
+print(array)
